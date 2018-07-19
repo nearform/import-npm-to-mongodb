@@ -1,6 +1,6 @@
 {
   "name": "import-npm-to-mongodb",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Imports npm to a MongoDB",
   "main": "index.js",
   "scripts": {
