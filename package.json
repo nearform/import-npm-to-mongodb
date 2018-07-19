@@ -1,0 +1,32 @@
+{
+  "name": "import-npm-to-mongodb",
+  "version": "0.0.0",
+  "description": "Imports npm to a MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "bin": {
+    "import-npm-to-mongodb": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nearform/import-npm-to-mongodb.git"
+  },
+  "author": "nearForm",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nearform/import-npm-to-mongodb/issues"
+  },
+  "homepage": "https://github.com/nearform/import-npm-to-mongodb#readme",
+  "dependencies": {
+    "mongojs": "^2.6.0",
+    "ndjson": "^1.5.0",
+    "pump": "^3.0.0",
+    "simple-get": "^3.0.2",
+    "stream-each": "^1.2.2"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
