@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const mongojs = require('mongojs')
 const get = require('simple-get')
 const pump = require('pump')
