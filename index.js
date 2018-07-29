@@ -8,6 +8,7 @@ const ndjson = require('ndjson')
 
 // make sure to have mongodb running
 const db = mongojs('localhost:27017/npm', ['modulesIndexed', 'modules'])
+const max = Number(process.argv[2]) || Infinity
 
 db.modulesIndexed.ensureIndex({modified: 1})
 
@@ -45,7 +46,17 @@ function sync (since, cb) {
 
       db.modulesIndexed.save(doc, function (err) {
         if (err) return cb(err)
-        db.modules.save(doc, cb)
+        db.modules.save(doc, function (err) {
+          if (err) return cb(err)
+          db.modulesIndexed.count(function (err, cnt) {
+            if (err) return cb(err)
+            if (cnt >= max) {
+              console.log('Done importing!')
+              return process.exit()
+            }
+            cb()
+          })
+        })
       })
     }
   })
